@@ -1,0 +1,491 @@
+/* --------------------------------------
+    Global Styles
+-----------------------------------------*/
+
+body {
+    background-color: #fff;
+}
+
+.main-title h2 {    
+    color: #292929;
+}
+
+.main-title h2:before {
+    background-color: #d1d1d2;
+}
+
+.main-title span {
+    background: #fff;
+}
+
+/* --------------------------------------
+    Loading
+-----------------------------------------*/
+
+.preloader {
+    background-color: #fff;
+}
+
+/* --------------------------------------
+    Navbar
+-----------------------------------------*/
+
+.navbar.active-nav {
+    background: #fff;
+    border-bottom: 1px solid rgba(238, 238, 238, .9);
+}
+
+.navbar.active-nav .navbar-brand {
+    color: #292929 !important;
+}
+
+.navbar.active-nav .navbar-nav > li > a,
+.navbar.active-nav .navbar-nav > li > a:hover,
+.navbar.active-nav .navbar-nav > li > a:focus {
+    color: #292929;
+}
+
+.navbar.active-nav .navbar-nav > li > a.active {
+    color: #16c0f0;
+}
+
+/*=========== Vertical Navigation ============*/
+.vertical-nav .mini-menu {
+    background-color: #fff;  
+    border-right: 2px solid #f0f0f5;
+    box-shadow: 0 0 10px rgba(153, 153, 153, .2);
+}
+
+.vertical-nav .mini-menu li a {
+    color: #555;
+    border-bottom: 1px solid #f0f0f5;
+    background: #e4e2e2;
+}
+
+.vertical-nav .mini-menu li a.active,
+.vertical-nav .mini-menu li a:hover {
+    color: #555;
+}
+
+
+/* --------------------------------------
+    About Me
+-----------------------------------------*/
+
+.about-me {
+    color: #292929;
+}
+
+.about-me .about-image {
+    background: linear-gradient(-50deg,  rgb(220, 219, 219, 9) 45%, transparent 25%);
+}
+
+.about-me .about-image img {
+    opacity: .85;
+}
+
+.about-me .about-info h3 {
+    color: #292929;
+}
+
+.about-me .about-info h3:before {
+    background: linear-gradient(135deg, #319be6 0%, #16c0f0 100%);
+}
+
+.about-me .about-info p {
+    color: #5c5a5d;
+}
+
+.about-me .about-info .personal-info {
+    background-color: #f3f2f9;
+}
+
+.about-me .about-info .personal-info p {
+    color: #5c5a5d;
+}
+
+.about-me .about-info .personal-info p span {
+    color: #fff;
+    background: linear-gradient(135deg, #319be6 0%, #16c0f0 100%);
+}
+
+.about-me .about-info .personal-info p span:before {
+    background: linear-gradient(135deg, #319be6 0%, #16c0f0 100%);
+}
+
+.about-me .about-info .personal-info .social-media:before {
+    border-bottom: 9px solid #1ba8ce;
+}
+
+.about-me .about-info .personal-info .social-media:after {
+    border-top: 9px solid #1ba8ce;
+}
+
+/* --------------------------------------
+    Services
+-----------------------------------------*/
+
+.services {
+    background: #f3f2f9;
+}
+
+.services .main-title span {
+    background: #f3f2f9;
+}
+
+.services .service {
+    background: #fff;
+}
+
+.services .service .service-icon i {
+    background: #fff;
+}
+
+.services .service h4 {
+    color: #292929;
+}
+
+.services .service p {
+    color: #5c5a5d;
+}
+
+.services .service .service-number:before {
+    border-bottom: 8px solid #1ba8ce;
+}
+
+.services .service .service-number:after {
+    border-top: 8px solid #1ba8ce;
+}
+
+/* --------------------------------------
+    Resume
+-----------------------------------------*/
+
+.resume {
+    color: #fff;
+}
+
+.resume .resume-item {
+    border: 3px solid #efefef;
+    box-shadow: 0 0 10px rgba(153, 153, 153, .2);
+}
+
+.resume .resume-item:before {
+    background: #efefef;
+    box-shadow: 0 0 10px rgba(153, 153, 153, .2);
+}
+
+.resume .resume-item .resume-date {
+    background: linear-gradient(135deg, #319be6 0%, #16c0f0 100%);
+    color: #fff;
+}
+
+.resume .resume-item .resume-date i {
+    background: #17a1c7;
+    color: #fff;
+}
+
+.resume .resume-item span {
+    color: #5c5a5d;
+}
+
+.resume .resume-item h4 {
+    color: #16c0f0;
+}
+
+.resume .resume-item p {
+    color: #5c5a5d;
+}
+
+/* --------------------------------------
+    Skills
+-----------------------------------------*/
+
+.skills {
+    background: #f3f2f9;
+}
+
+.skills .main-title span {
+    background: #f3f2f9;
+}
+
+.skills .skills-left h4 {
+    color: #292929;
+}
+
+.skills .skills-left p {
+    color: #5c5a5d;
+}
+
+.skills .skills-list h3 {
+    -webkit-box-shadow: 0px 8px 12px rgba(153, 153, 153, .2);
+    -moz-box-shadow: 0px 8px 12px rgba(153, 153, 153, .2);
+    -o-box-shadow: 0px 8px 12px rgba(153, 153, 153, .2);
+    box-shadow: 0px 8px 12px rgba(153, 153, 153, .2);
+}
+
+.skills .skills-list h3 a {
+    background: #fff;
+}
+
+.skills .skills-list h3.active a {
+    color: #fff;
+}
+
+.skills .skills-content {
+    background: #fff;
+}
+
+.skills .progress-container .progress {
+    background-color: #f4f4f5;
+}
+
+.skills .progress-container .progress h4 {
+    color: #5c5a5d;
+    background: #f4f4f5;
+}
+
+.skills .progress-container .progress h4 .percent {
+    background: #33b9de;
+    color: #eaeaea;
+}
+
+/* --------------------------------------
+    Portfolio
+-----------------------------------------*/
+
+.portfolio .list-filter li {
+    color: #292929;
+}
+
+.portfolio .portfolio-content .item .overlay { 
+    background: rgba(204, 204, 204, .9);
+}
+
+.portfolio .portfolio-content .item .overlay .item-title {
+    color: #292929;
+}
+
+/* --------------------------------------
+    Testimonials
+-----------------------------------------*/
+
+.testimonials {
+    background: #f3f2f9;
+}
+
+.testimonials .main-title span {
+    background: #f3f2f9;
+}
+
+.testimonials .owl-theme .owl-dots .owl-dot span {
+	background: #fff;
+}
+
+.testimonials .testimonial-box {
+	background: #fff;
+    border-left: 12px solid #f3f2f9;
+    border-right: 12px solid #f3f2f9;
+}
+
+.testimonials .testimonial-box .description .quote-left:before {
+    border-bottom: 8px solid #1ba8ce;
+}
+
+.testimonials .testimonial-box .description .quote-left:after {
+    border-top: 8px solid #1ba8ce;
+}
+
+.testimonials .testimonial-box .description .quote-right:before {
+    border-bottom: 8px solid #1ba8ce;
+}
+
+.testimonials .testimonial-box .description .quote-right:after {
+    border-top: 8px solid #1ba8ce;
+}
+
+.testimonials .testimonial-box .description p {
+    color: #5c5a5d;
+}
+
+.testimonials .testimonial-box .client-pic img {
+	border: 2px solid #efefef;
+    background: #fff;
+}
+
+.testimonials .client-details h6 {
+	color: #292929;
+}
+
+/* --------------------------------------
+    Blog
+-----------------------------------------*/
+
+.blog {
+    color: #292929;
+}
+
+.blog .post {
+    border: 1px solid #f9f7f7;
+    border-right: none;
+}
+
+.blog  .post .post-img img  {
+    opacity: .85;
+}
+
+.blog .post .post-content {
+    box-shadow: 0 0 10px rgba(153, 153, 153, .1);
+}
+
+.blog .post .post-content .post-info li {
+    color: #5c5a5d;
+}
+
+.blog .post .post-content .post-info li a span {
+    color: #5c5a5d;
+}
+
+.blog .post .post-content .post-text p {
+    border-top: 1px solid #edecf1;
+    color: #5c5a5d;
+}
+
+.blog .post-content .post-footer {
+    background: #f3f2f9;
+}
+
+.blog .post-content .post-footer .post-more {
+    color: #292929;
+}
+
+.blog .post-content .post-footer .post-category a:before {
+    border-bottom: 6px solid #1ba8ce;
+}
+
+.blog .post-content .post-footer .post-category a:after {
+    border-top: 6px solid #1ba8ce;
+}
+
+/* --------------------------------------
+    Contact
+-----------------------------------------*/
+
+.contact {
+    background: #f3f2f9;
+}
+
+.contact .main-title span {
+    background: #f3f2f9;
+}
+
+.contact .contact-boxes {
+    border: 3px solid #f9f9f9;
+    box-shadow: 0 0 10px rgba(153, 153, 153, .2);
+}
+
+.contact .contact-box .content-box p {
+    color: #5c5a5d;
+}
+
+.contact .contact-form {
+    border: 3px solid #f9f9f9;
+    box-shadow: 0 0 10px rgba(153, 153, 153, .2);
+}
+
+.contact .contact-form .form-group .form-control {
+    background-color: #f3f2f9;
+    color: #292929;
+    border-bottom: 1px solid rgb(92, 90, 93, .4);
+}
+
+.contact .contact-form .form-group label {
+    color: #5c5a5d;
+}
+
+/* --------------------------------------
+    Footer
+-----------------------------------------*/
+
+.footer {
+    background-color: #fff;
+    color: #292929;
+}
+
+.footer .logo {
+    color: #292929;
+}
+
+.footer .footer-social-icons li a {
+    color: #292929;
+}
+
+.footer .footer-social-icons li a:hover {
+    color: #292929;
+}
+
+/* --------------------------------------
+    Media Queries
+-----------------------------------------*/
+
+/* Small Devices */
+@media (max-width: 767.98px) {
+    
+    /*=========== Navbar ============*/
+    .navbar {
+        background-color: #fff;
+        border-bottom: 1px solid rgba(238, 238, 238, .9);
+    }
+    
+    .navbar .navbar-brand {
+        color: #292929 !important;
+    }
+    
+    .navbar .navbar-links {
+        background: rgba(255, 255, 255, .08);
+    }
+    
+    .navbar .navbar-links .navbar-nav {
+        background: #fff;
+    }
+    
+    .navbar .navbar-links .navbar-nav > li.nav-brand {
+        border-bottom: 1px solid #fff;
+        box-shadow: 0 0 10px rgba(153, 153, 153, .2);
+    }
+    
+    .navbar .navbar-links .navbar-nav > li.nav-brand a {
+        color: #292929;
+    }
+    
+    .navbar .navbar-nav > li {
+        border-top: 1px solid #efefef;
+        border-bottom: 1px solid #f3f3f3;
+    }
+    
+    .navbar .navbar-nav > li > a,
+    .navbar .navbar-nav > li > a:hover,
+    .navbar .navbar-nav > li > a:focus {
+        color: #292929;
+    }
+
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+    /*=========== Skills ============*/
+    .skills .skills-content .professional-skills,
+    .skills .skills-content .personal-skills {
+        background: #fff;
+    }
+    
+    .skills .skills-content h3:before {
+        border-bottom: 8px solid #1ba8ce;
+    }
+    
+    .skills .skills-content h3:after {
+        border-top: 8px solid #1ba8ce;
+    }
+    
+}
