@@ -6,7 +6,7 @@ body {
     background-color: #fff;
 }
 
-.main-title h2 {    
+.main-title h2 {
     color: #292929;
 }
 
@@ -18,6 +18,7 @@ body {
     background: #fff;
 }
 
+
 /* --------------------------------------
     Loading
 -----------------------------------------*/
@@ -25,6 +26,7 @@ body {
 .preloader {
     background-color: #fff;
 }
+
 
 /* --------------------------------------
     Navbar
@@ -39,19 +41,21 @@ body {
     color: #292929 !important;
 }
 
-.navbar.active-nav .navbar-nav > li > a,
-.navbar.active-nav .navbar-nav > li > a:hover,
-.navbar.active-nav .navbar-nav > li > a:focus {
+.navbar.active-nav .navbar-nav>li>a,
+.navbar.active-nav .navbar-nav>li>a:hover,
+.navbar.active-nav .navbar-nav>li>a:focus {
     color: #292929;
 }
 
-.navbar.active-nav .navbar-nav > li > a.active {
+.navbar.active-nav .navbar-nav>li>a.active {
     color: #16c0f0;
 }
 
+
 /*=========== Vertical Navigation ============*/
+
 .vertical-nav .mini-menu {
-    background-color: #fff;  
+    background-color: #fff;
     border-right: 2px solid #f0f0f5;
     box-shadow: 0 0 10px rgba(153, 153, 153, .2);
 }
@@ -77,7 +81,7 @@ body {
 }
 
 .about-me .about-image {
-    background: linear-gradient(-50deg,  rgb(220, 219, 219, 9) 45%, transparent 25%);
+    background: linear-gradient(-50deg, rgb(220, 219, 219, 9) 45%, transparent 25%);
 }
 
 .about-me .about-image img {
@@ -121,6 +125,7 @@ body {
     border-top: 9px solid #1ba8ce;
 }
 
+
 /* --------------------------------------
     Services
 -----------------------------------------*/
@@ -156,6 +161,7 @@ body {
 .services .service .service-number:after {
     border-top: 8px solid #1ba8ce;
 }
+
 
 /* --------------------------------------
     Resume
@@ -196,6 +202,7 @@ body {
 .resume .resume-item p {
     color: #5c5a5d;
 }
+
 
 /* --------------------------------------
     Skills
@@ -250,6 +257,7 @@ body {
     color: #eaeaea;
 }
 
+
 /* --------------------------------------
     Portfolio
 -----------------------------------------*/
@@ -258,13 +266,14 @@ body {
     color: #292929;
 }
 
-.portfolio .portfolio-content .item .overlay { 
+.portfolio .portfolio-content .item .overlay {
     background: rgba(204, 204, 204, .9);
 }
 
 .portfolio .portfolio-content .item .overlay .item-title {
     color: #292929;
 }
+
 
 /* --------------------------------------
     Testimonials
@@ -279,11 +288,11 @@ body {
 }
 
 .testimonials .owl-theme .owl-dots .owl-dot span {
-	background: #fff;
+    background: #fff;
 }
 
 .testimonials .testimonial-box {
-	background: #fff;
+    background: #fff;
     border-left: 12px solid #f3f2f9;
     border-right: 12px solid #f3f2f9;
 }
@@ -309,13 +318,14 @@ body {
 }
 
 .testimonials .testimonial-box .client-pic img {
-	border: 2px solid #efefef;
+    border: 2px solid #efefef;
     background: #fff;
 }
 
 .testimonials .client-details h6 {
-	color: #292929;
+    color: #292929;
 }
+
 
 /* --------------------------------------
     Blog
@@ -330,7 +340,7 @@ body {
     border-right: none;
 }
 
-.blog  .post .post-img img  {
+.blog .post .post-img img {
     opacity: .85;
 }
 
@@ -366,6 +376,7 @@ body {
 .blog .post-content .post-footer .post-category a:after {
     border-top: 6px solid #1ba8ce;
 }
+
 
 /* --------------------------------------
     Contact
@@ -403,6 +414,7 @@ body {
     color: #5c5a5d;
 }
 
+
 /* --------------------------------------
     Footer
 -----------------------------------------*/
@@ -424,68 +436,60 @@ body {
     color: #292929;
 }
 
+
 /* --------------------------------------
     Media Queries
 -----------------------------------------*/
 
+
 /* Small Devices */
+
 @media (max-width: 767.98px) {
-    
     /*=========== Navbar ============*/
     .navbar {
         background-color: #fff;
         border-bottom: 1px solid rgba(238, 238, 238, .9);
     }
-    
     .navbar .navbar-brand {
         color: #292929 !important;
     }
-    
     .navbar .navbar-links {
         background: rgba(255, 255, 255, .08);
     }
-    
     .navbar .navbar-links .navbar-nav {
         background: #fff;
     }
-    
-    .navbar .navbar-links .navbar-nav > li.nav-brand {
+    .navbar .navbar-links .navbar-nav>li.nav-brand {
         border-bottom: 1px solid #fff;
         box-shadow: 0 0 10px rgba(153, 153, 153, .2);
     }
-    
-    .navbar .navbar-links .navbar-nav > li.nav-brand a {
+    .navbar .navbar-links .navbar-nav>li.nav-brand a {
         color: #292929;
     }
-    
-    .navbar .navbar-nav > li {
+    .navbar .navbar-nav>li {
         border-top: 1px solid #efefef;
         border-bottom: 1px solid #f3f3f3;
     }
-    
-    .navbar .navbar-nav > li > a,
-    .navbar .navbar-nav > li > a:hover,
-    .navbar .navbar-nav > li > a:focus {
+    .navbar .navbar-nav>li>a,
+    .navbar .navbar-nav>li>a:hover,
+    .navbar .navbar-nav>li>a:focus {
         color: #292929;
     }
-
 }
 
+
 /* Extra small devices (portrait phones, less than 576px) */
+
 @media (max-width: 575.98px) {
-    
     /*=========== Skills ============*/
     .skills .skills-content .professional-skills,
     .skills .skills-content .personal-skills {
         background: #fff;
     }
-    
     .skills .skills-content h3:before {
         border-bottom: 8px solid #1ba8ce;
     }
-    
     .skills .skills-content h3:after {
         border-top: 8px solid #1ba8ce;
     }
-    
 }

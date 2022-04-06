@@ -1,12 +1,12 @@
 /**
-* Filterizr is a jQuery plugin that sorts, shuffles and applies stunning filters over
-* responsive galleries using CSS3 transitions and custom CSS effects.
-*
-* @author Yiotis Kaltsikis
-* @see {@link http://yiotis.net/filterizr}
-* @version 1.2.5
-* @license MIT License
-*/
+ * Filterizr is a jQuery plugin that sorts, shuffles and applies stunning filters over
+ * responsive galleries using CSS3 transitions and custom CSS effects.
+ *
+ * @author Yiotis Kaltsikis
+ * @see {@link http://yiotis.net/filterizr}
+ * @version 1.2.5
+ * @license MIT License
+ */
 
 (function(global, $) {
 
@@ -16,9 +16,9 @@
     if (!$) throw new Error('Filterizr requires jQuery to work.');
 
     /**
-    * Modified version of Jake Gordon's Bin Packing algorithm used for Filterizr's 'packed' layout
-    * @see {@link https://github.com/jakesgordon/bin-packing}
-    */
+     * Modified version of Jake Gordon's Bin Packing algorithm used for Filterizr's 'packed' layout
+     * @see {@link https://github.com/jakesgordon/bin-packing}
+     */
     var Packer = function(w) {
         this.init(w);
     };
@@ -31,26 +31,26 @@
             var n, node, block, len = blocks.length;
             var h = len > 0 ? blocks[0].h : 0;
             this.root.h = h;
-            for (n = 0; n < len ; n++) {
+            for (n = 0; n < len; n++) {
                 block = blocks[n];
                 if ((node = this.findNode(this.root, block.w, block.h)))
-                block.fit = this.splitNode(node, block.w, block.h);
+                    block.fit = this.splitNode(node, block.w, block.h);
                 else
-                block.fit = this.growDown(block.w, block.h);
+                    block.fit = this.growDown(block.w, block.h);
             }
         },
         findNode: function(root, w, h) {
             if (root.used)
-            return this.findNode(root.right, w, h) || this.findNode(root.down, w, h);
+                return this.findNode(root.right, w, h) || this.findNode(root.down, w, h);
             else if ((w <= root.w) && (h <= root.h))
-            return root;
+                return root;
             else
-            return null;
+                return null;
         },
         splitNode: function(node, w, h) {
             node.used = true;
-            node.down  = { x: node.x,     y: node.y + h, w: node.w,     h: node.h - h };
-            node.right = { x: node.x + w, y: node.y,     w: node.w - w, h: h          };
+            node.down = { x: node.x, y: node.y + h, w: node.w, h: node.h - h };
+            node.right = { x: node.x + w, y: node.y, w: node.w - w, h: h };
             return node;
         },
         growDown: function(w, h) {
@@ -61,23 +61,24 @@
                 y: 0,
                 w: this.root.w,
                 h: this.root.h + h,
-                down:  { x: 0, y: this.root.h, w: this.root.w, h: h },
+                down: { x: 0, y: this.root.h, w: this.root.w, h: h },
                 right: this.root
             };
             if ((node = this.findNode(this.root, w, h)))
-            return this.splitNode(node, w, h);
+                return this.splitNode(node, w, h);
             else
-            return null;
+                return null;
         }
     };
 
     /**
-    * Only Filterizr method extracted on jQuery.fn.
-    * Instantiates a new Filterizr or calls any of the public Filterizr methods.
-    * @return {jQuery} this - to facilitate jQuery method chaining.
-    */
+     * Only Filterizr method extracted on jQuery.fn.
+     * Instantiates a new Filterizr or calls any of the public Filterizr methods.
+     * @return {jQuery} this - to facilitate jQuery method chaining.
+     */
     $.fn.filterizr = function() {
-        var self = this, args = arguments;
+        var self = this,
+            args = arguments;
         //Create the Filterizr obj as an internal private property on the current object
         //to serve as a private namespace
         if (!self._fltr) {
@@ -88,35 +89,34 @@
             if (args[0].lastIndexOf('_') > -1) throw new Error('Filterizr error: You cannot call private methods');
             if (typeof self._fltr[args[0]] === 'function') {
                 self._fltr[args[0]](args[1], args[2]);
-            }
-            else throw new Error('Filterizr error: There is no such function');
+            } else throw new Error('Filterizr error: There is no such function');
         }
         return self;
     };
 
     /**
-    * Filterizr prototype
-    */
+     * Filterizr prototype
+     */
     $.fn.filterizr.prototype = {
 
         /**
-        * Filterizr constructor.
-        * @param {Object} [container] - your container.
-        * @param {Object} [options] - user options to override defaults.
-        * @constructor
-        */
+         * Filterizr constructor.
+         * @param {Object} [container] - your container.
+         * @param {Object} [options] - user options to override defaults.
+         * @constructor
+         */
         init: function(container, options) {
             var self = $(container).extend($.fn.filterizr.prototype);
             //Default options
             self.options = {
                 animationDuration: 0.5,
                 callbacks: {
-                    onFilteringStart: function() { },
-                    onFilteringEnd: function() { },
-                    onShufflingStart: function() { },
-                    onShufflingEnd: function() { },
-                    onSortingStart: function() { },
-                    onSortingEnd: function() { }
+                    onFilteringStart: function() {},
+                    onFilteringEnd: function() {},
+                    onShufflingStart: function() {},
+                    onShufflingEnd: function() {},
+                    onSortingStart: function() {},
+                    onSortingEnd: function() {}
                 },
                 delay: 0,
                 delayMode: 'progressive',
@@ -135,7 +135,7 @@
             };
             //No arguments constructor
             if (arguments.length === 0) {
-                options  = self.options;
+                options = self.options;
             }
             //One argument constructor (only options)
             if (arguments.length === 1 && typeof arguments[0] === 'object') options = arguments[0];
@@ -145,24 +145,25 @@
             }
             //Private properties
             self.css({ //Cache reference to container as jQuery obj and init its CSS
-                'padding' : 0,
+                'padding': 0,
                 'position': 'relative'
             });
             self._lastCategory = 0; //Highest value in data-category of .filtr-items
-            self._isAnimating  = false;
-            self._isShuffling  = false;
-            self._isSorting    = false;
+            self._isAnimating = false;
+            self._isShuffling = false;
+            self._isSorting = false;
             //.filtr-item collections
-            self._mainArray   = self._getFiltrItems();
-            self._subArrays   = self._makeSubarrays();
+            self._mainArray = self._getFiltrItems();
+            self._subArrays = self._makeSubarrays();
             self._activeArray = self._getCollectionByFilter(self.options.filter);
             //Used for multiple category filtering
-            self._toggledCategories = { };
+            self._toggledCategories = {};
             //Used for search feature
             self._typedText = $('input[data-search]').val() || '';
             //Generate unique ID for resize events
             self._uID = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+                var r = Math.random() * 16 | 0,
+                    v = c == 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
             });
             //Set up Filterizr events
@@ -175,14 +176,14 @@
         },
 
         /***********************************
-        * Public methods
-        ***********************************/
+         * Public methods
+         ***********************************/
         /**
-        * Filters the items
-        * @param {number} targetFilter - the applied filter towards which items transition
-        */
+         * Filters the items
+         * @param {number} targetFilter - the applied filter towards which items transition
+         */
         filter: function(targetFilter) {
-            var self   = this,
+            var self = this,
                 target = self._getCollectionByFilter(targetFilter);
 
             self.options.filter = targetFilter;
@@ -194,12 +195,13 @@
         },
 
         /**
-        * Toggles filters on/off and renders the new collection
-        * @param {number} toggledFilter - the filter to toggle
-        */
+         * Toggles filters on/off and renders the new collection
+         * @param {number} toggledFilter - the filter to toggle
+         */
         toggleFilter: function(toggledFilter) {
-            var self   = this,
-                target = [], i = 0;
+            var self = this,
+                target = [],
+                i = 0;
 
             self.trigger('filteringStart');
             //Toggle the toggledFilter in the active categories
@@ -229,16 +231,17 @@
         },
 
         /**
-        * Searches the contents of .filtr-item elements, filters them and renders the results
-        * @param {string} text to search in contents of .filtr-item elements
-        */
+         * Searches the contents of .filtr-item elements, filters them and renders the results
+         * @param {string} text to search in contents of .filtr-item elements
+         */
         search: function(text) {
-            var self   = this,
+            var self = this,
                 //get active category
-                array  = self._multifilterModeOn() ?
-                            self._makeMultifilterArray() :
-                            self._getCollectionByFilter(self.options.filter),
-                target = [], i = 0;
+                array = self._multifilterModeOn() ?
+                self._makeMultifilterArray() :
+                self._getCollectionByFilter(self.options.filter),
+                target = [],
+                i = 0;
 
             if (self._isSearchActivated()) {
                 for (i = 0; i < array.length; i++) {
@@ -270,8 +273,8 @@
         },
 
         /**
-        * Shuffles the active collection and rearranges it on screen
-        */
+         * Shuffles the active collection and rearranges it on screen
+         */
         shuffle: function() {
             var self = this;
 
@@ -284,8 +287,8 @@
             self._subArrays = self._makeSubarrays();
 
             var target = self._multifilterModeOn() ?
-                            self._makeMultifilterArray() :
-                            self._getCollectionByFilter(self.options.filter);
+                self._makeMultifilterArray() :
+                self._getCollectionByFilter(self.options.filter);
 
             if (self._isSearchActivated())
                 self.search(self._typedText);
@@ -294,23 +297,23 @@
         },
 
         /**
-        * Sorts the active collection and rearranges it on screen.
-        * @param {string} [attr] - attr based on which to sort (default: 'domIndex' / possible: 'domIndex', 'sortData', 'w', 'h').
-        * @param {string} [sortOrder] - asc/desc (default: 'asc').
-        */
+         * Sorts the active collection and rearranges it on screen.
+         * @param {string} [attr] - attr based on which to sort (default: 'domIndex' / possible: 'domIndex', 'sortData', 'w', 'h').
+         * @param {string} [sortOrder] - asc/desc (default: 'asc').
+         */
         sort: function(attr, sortOrder) {
-            var self  = this;
+            var self = this;
             //Set defaults
-            attr 	  = attr      || 'domIndex';
+            attr = attr || 'domIndex';
             sortOrder = sortOrder || 'asc';
 
             //SortingStart callback
             self._isAnimating = true;
-            self._isSorting   = true;
+            self._isSorting = true;
             self.trigger('sortingStart');
 
             //Register sort attr on all elements if it is a user-defined data-attribute
-            var isUserAttr = attr !== 'domIndex' && attr !== 'sortData' && attr !== 'w' && attr!== 'h';
+            var isUserAttr = attr !== 'domIndex' && attr !== 'sortData' && attr !== 'w' && attr !== 'h';
             if (isUserAttr) {
                 for (var i = 0; i < self._mainArray.length; i++) {
                     self._mainArray[i][attr] = self._mainArray[i].data(attr);
@@ -321,8 +324,8 @@
             self._subArrays = self._makeSubarrays();
             //Place sorted collection to new positions
             var target = self._multifilterModeOn() ?
-                            self._makeMultifilterArray() :
-                            self._getCollectionByFilter(self.options.filter);
+                self._makeMultifilterArray() :
+                self._getCollectionByFilter(self.options.filter);
 
             if (self._isSearchActivated())
                 self.search(self._typedText);
@@ -331,11 +334,12 @@
         },
 
         /**
-        * Overrides the default options with the user-provided ones.
-        * @param {object} options - the user-provided options to override defaults.
-        */
+         * Overrides the default options with the user-provided ones.
+         * @param {object} options - the user-provided options to override defaults.
+         */
         setOptions: function(options) {
-            var self = this, i = 0;
+            var self = this,
+                i = 0;
             //Override options
             for (var prop in options) {
                 self.options[prop] = options[prop];
@@ -343,42 +347,42 @@
             //If the user tries to override animationDuration, easing, delay or delayMode
             if (self._mainArray && (options.animationDuration || options.delay || options.easing || options.delayMode)) {
                 for (i = 0; i < self._mainArray.length; i++) {
-                    self._mainArray[i].css('transition', 'all ' + self.options.animationDuration + 's ' +  self.options.easing + ' ' + self._mainArray[i]._calcDelay() + 'ms');
+                    self._mainArray[i].css('transition', 'all ' + self.options.animationDuration + 's ' + self.options.easing + ' ' + self._mainArray[i]._calcDelay() + 'ms');
                 }
             }
             //If the user tries to override a callback, make sure undefined callbacks are set to empty functions
             if (options.callbacks) {
                 if (!options.callbacks.onFilteringStart)
-                    self.options.callbacks.onFilteringStart = function() { };
+                    self.options.callbacks.onFilteringStart = function() {};
                 if (!options.callbacks.onFilteringEnd)
-                    self.options.callbacks.onFilteringEnd = function() { };
+                    self.options.callbacks.onFilteringEnd = function() {};
                 if (!options.callbacks.onShufflingStart)
-                    self.options.callbacks.onShufflingStart = function() { };
+                    self.options.callbacks.onShufflingStart = function() {};
                 if (!options.callbacks.onShufflingEnd)
-                    self.options.callbacks.onShufflingEnd = function() { };
+                    self.options.callbacks.onShufflingEnd = function() {};
                 if (!options.callbacks.onSortingStart)
-                    self.options.callbacks.onSortingStart = function() { };
+                    self.options.callbacks.onSortingStart = function() {};
                 if (!options.callbacks.onSortingEnd)
-                    self.options.callbacks.onSortingEnd = function() { };
+                    self.options.callbacks.onSortingEnd = function() {};
             }
             //If the user has not defined a transform property in their CSS, add it
             //while overriding, including translates for movement
-            if (!self.options.filterInCss.transform)  self.options.filterInCss.transform  = 'translate3d(0,0,0)';
+            if (!self.options.filterInCss.transform) self.options.filterInCss.transform = 'translate3d(0,0,0)';
             if (!self.options.filterOutCss.transform) self.options.filterOutCss.transform = 'translate3d(0,0,0)';
         },
 
         /***********************************
-        * Private & helper methods
-        ***********************************/
+         * Private & helper methods
+         ***********************************/
         /**
-        * Finds all .filtr-item elements in the .filtr-container and sets them up before returning them in an array.
-        * @return {Object[]}  all .filtr-item elements contained in Filterizr's container.
-        * @private
-        */
+         * Finds all .filtr-item elements in the .filtr-container and sets them up before returning them in an array.
+         * @return {Object[]}  all .filtr-item elements contained in Filterizr's container.
+         * @private
+         */
         _getFiltrItems: function() {
-            var self       = this,
-            filtrItems = $(self.find('.filtr-item')),
-            itemsArray = [];
+            var self = this,
+                filtrItems = $(self.find('.filtr-item')),
+                itemsArray = [];
 
             $.each(filtrItems, function(i, e) {
                 //Set item up as Filtr object & push to array
@@ -389,13 +393,13 @@
         },
 
         /**
-        * Divide .filtr-item elements into sub-arrays based on data-category attribute.
-        * @return {Object[Object[self._lastCategory]]} Array of arrays including items grouped by data-category.
-        * @private
-        */
+         * Divide .filtr-item elements into sub-arrays based on data-category attribute.
+         * @return {Object[Object[self._lastCategory]]} Array of arrays including items grouped by data-category.
+         * @private
+         */
         _makeSubarrays: function() {
             var self = this,
-            subArrays = [];
+                subArrays = [];
 
             for (var i = 0; i < self._lastCategory; i++) subArrays.push([]);
 
@@ -415,13 +419,14 @@
         },
 
         /**
-        * Make a .filtr-item array based on the activated filters
-        * @return {Object[]} array consisting of the .filtr-item elements belonging to active filters
-        * @private
-        */
+         * Make a .filtr-item array based on the activated filters
+         * @return {Object[]} array consisting of the .filtr-item elements belonging to active filters
+         * @private
+         */
         _makeMultifilterArray: function() {
-            var self   = this,
-                target = [], addedMap = {};
+            var self = this,
+                target = [],
+                addedMap = {};
 
             for (var i = 0; i < self._mainArray.length; i++) {
                 //If the item belongs to multiple categories
@@ -436,8 +441,7 @@
                             break;
                         }
                     }
-                }
-                else {
+                } else {
                     if (item._category in self._toggledCategories) belongsToCategory = true;
                 }
                 //If the item is not already visible and belongs to a category
@@ -451,9 +455,9 @@
         },
 
         /**
-        * Detect and set up preset controls.
-        * @private
-        */
+         * Detect and set up preset controls.
+         * @private
+         */
         _setupControls: function() {
             var self = this;
             //Filter controls
@@ -467,10 +471,9 @@
             $('*[data-multifilter]').click(function() {
                 var targetFilter = $(this).data('multifilter');
                 if (targetFilter === 'all') {
-                    self._toggledCategories = { };
+                    self._toggledCategories = {};
                     self.filter('all');
-                }
-                else {
+                } else {
                     self.toggleFilter(targetFilter);
                 }
             });
@@ -497,9 +500,9 @@
         },
 
         /**
-        * Set up window and Filterizr events.
-        * @private
-        */
+         * Set up window and Filterizr events.
+         * @private
+         */
         _setupEvents: function() {
             var self = this;
             //Window resize event
@@ -511,63 +514,65 @@
             //Filterizr events
             self
             //Container resize event
-            .on('resizeFiltrContainer', function() {
-                if (self._multifilterModeOn())
-                    self.toggleFilter();
-                else
-                    self.filter(self.options.filter);
-            })
-            //onFilteringStart event
-            .on('filteringStart', function() {
-                self.options.callbacks.onFilteringStart();
-            })
-            //onFilteringEnd event
-            .on('filteringEnd', function() {
-                self.options.callbacks.onFilteringEnd();
-            })
-            //onShufflingStart event
-            .on('shufflingStart', function() {
-                self._isShuffling = true;
-                self.options.callbacks.onShufflingStart();
-            })
-            //onFilteringEnd event
-            .on('shufflingEnd', function() {
-                self.options.callbacks.onShufflingEnd();
-                self._isShuffling = false;
-            })
-            //onSortingStart event
-            .on('sortingStart', function() {
-                self._isSorting = true;
-                self.options.callbacks.onSortingStart();
-            })
-            //onSortingEnd event
-            .on('sortingEnd', function() {
-                self.options.callbacks.onSortingEnd();
-                self._isSorting = false;
-            });
+                .on('resizeFiltrContainer', function() {
+                    if (self._multifilterModeOn())
+                        self.toggleFilter();
+                    else
+                        self.filter(self.options.filter);
+                })
+                //onFilteringStart event
+                .on('filteringStart', function() {
+                    self.options.callbacks.onFilteringStart();
+                })
+                //onFilteringEnd event
+                .on('filteringEnd', function() {
+                    self.options.callbacks.onFilteringEnd();
+                })
+                //onShufflingStart event
+                .on('shufflingStart', function() {
+                    self._isShuffling = true;
+                    self.options.callbacks.onShufflingStart();
+                })
+                //onFilteringEnd event
+                .on('shufflingEnd', function() {
+                    self.options.callbacks.onShufflingEnd();
+                    self._isShuffling = false;
+                })
+                //onSortingStart event
+                .on('sortingStart', function() {
+                    self._isSorting = true;
+                    self.options.callbacks.onSortingStart();
+                })
+                //onSortingEnd event
+                .on('sortingEnd', function() {
+                    self.options.callbacks.onSortingEnd();
+                    self._isSorting = false;
+                });
         },
 
         /**
-        * Calculates the final positions of items being filtered in, updates the height of .filtr-container.
-        * @return {Object[]} array of future item positions.
-        * @private
-        */
+         * Calculates the final positions of items being filtered in, updates the height of .filtr-container.
+         * @return {Object[]} array of future item positions.
+         * @private
+         */
         _calcItemPositions: function() {
-            var self  = this,
+            var self = this,
                 array = self._activeArray,
-            //Container data
-            containerHeight = 0,
-            cols = Math.round(self.width() / self.find('.filtr-item').outerWidth()),
-            rows = 0,
-            //Item data
-            itemWidth  = array[0].outerWidth(),
-            itemHeight = 0,
-            //Position calculation vars
-            left = 0, top = 0,
-            //Loop vars
-            i = 0, x = 0,
-            //Array of positions to return
-            posArray = [];
+                //Container data
+                containerHeight = 0,
+                cols = Math.round(self.width() / self.find('.filtr-item').outerWidth()),
+                rows = 0,
+                //Item data
+                itemWidth = array[0].outerWidth(),
+                itemHeight = 0,
+                //Position calculation vars
+                left = 0,
+                top = 0,
+                //Loop vars
+                i = 0,
+                x = 0,
+                //Array of positions to return
+                posArray = [];
 
             //Layout for items of varying sizes
             if (self.options.layout === 'packed') {
@@ -619,7 +624,7 @@
                 for (i = 1; i <= array.length; i++) {
                     itemWidth = array[i - 1].width();
                     var itemOuterWidth = array[i - 1].outerWidth(),
-                    nextItemWidth = 0;
+                        nextItemWidth = 0;
                     if (array[i]) nextItemWidth = array[i].width();
                     posArray.push({
                         left: left,
@@ -627,12 +632,11 @@
                     });
                     x = left + itemWidth + nextItemWidth;
                     if (x > rowWidth) {
-                        x 	 = 0;
+                        x = 0;
                         left = 0;
-                        top  += array[0].outerHeight();
+                        top += array[0].outerHeight();
                         rows++;
-                    }
-                    else left += itemOuterWidth;
+                    } else left += itemOuterWidth;
                 }
                 containerHeight = rows * array[0].outerHeight();
             }
@@ -658,17 +662,17 @@
                 }
                 //Calculate containerHeight
                 for (i = 0; i < cols; i++) {
-                    var columnHeight = 0, index = i;
-                    while(array[index]) {
+                    var columnHeight = 0,
+                        index = i;
+                    while (array[index]) {
                         columnHeight += array[index].outerHeight();
                         index += cols;
                     }
                     if (columnHeight > containerHeight) {
                         containerHeight = columnHeight;
                         columnHeight = 0;
-                    }
-                    else
-                    columnHeight = 0;
+                    } else
+                        columnHeight = 0;
                 }
             }
             //Layout for items of exactly same size
@@ -696,10 +700,10 @@
         },
 
         /**
-        * Handles filtering in/out and reposition items when transition between categories
-        * @param {Object[]} the target array towards which to filter
-        * @private
-        */
+         * Handles filtering in/out and reposition items when transition between categories
+         * @param {Object[]} the target array towards which to filter
+         * @private
+         */
         _handleFiltering: function(target) {
             var self = this,
                 toFilterOut = self._getArrayOfUniqueItems(self._activeArray, target);
@@ -713,30 +717,30 @@
         },
 
         /**
-        * Determines if the user is using data-multifilter controls or simple data-filter controls
-        * @return {boolean} indicating whether multiple filter mode is on
-        * @private
-        */
+         * Determines if the user is using data-multifilter controls or simple data-filter controls
+         * @return {boolean} indicating whether multiple filter mode is on
+         * @private
+         */
         _multifilterModeOn: function() {
             var self = this;
             return Object.keys(self._toggledCategories).length > 0;
         },
 
         /**
-        * Determines if the user has something typed in the search box
-        * @return {boolean} indicating whether the user has searched
-        * @private
-        */
+         * Determines if the user has something typed in the search box
+         * @return {boolean} indicating whether the user has searched
+         * @private
+         */
         _isSearchActivated: function() {
             var self = this;
             return self._typedText.length > 0;
         },
 
         /**
-        * Places .filtr-item elements on the grid positions
-        * @param {Object[]} arr - an array consisting of .filtr-item elements
-        * @private
-        */
+         * Places .filtr-item elements on the grid positions
+         * @param {Object[]} arr - an array consisting of .filtr-item elements
+         * @private
+         */
         _placeItems: function(arr) {
             var self = this;
             //Tag gallery state as animating
@@ -749,24 +753,24 @@
         },
 
         /**
-        * Returns item collection based on a certain filter
-        * @param {string|number} filter of category to return
-        * @return {Object[]} one of the item collections based on filter
-        * @private
-        */
+         * Returns item collection based on a certain filter
+         * @param {string|number} filter of category to return
+         * @return {Object[]} one of the item collections based on filter
+         * @private
+         */
         _getCollectionByFilter: function(filter) {
             var self = this;
             return filter === 'all' ? self._mainArray : self._subArrays[filter - 1];
         },
 
         /**
-        * Used to make deep copies of the predefined filters
-        * in the options for the filterIn/Out methods of items.
-        * @see _filterIn and _filterOut methods in FiltrItemProto.
-        * @param {Object} obj - is the source object to make a deep copy from.
-        * @return {Object} Deep copy of the obj param.
-        * @private
-        */
+         * Used to make deep copies of the predefined filters
+         * in the options for the filterIn/Out methods of items.
+         * @see _filterIn and _filterOut methods in FiltrItemProto.
+         * @param {Object} obj - is the source object to make a deep copy from.
+         * @return {Object} Deep copy of the obj param.
+         * @private
+         */
         _makeDeepCopy: function(obj) {
             var r = {};
             for (var p in obj) r[p] = obj[p];
@@ -774,42 +778,44 @@
         },
 
         /**
-        * Comparator factory used to produce camparers for sorting.
-        * @see Filterizr.prototype.sort.
-        * @param {string} prop - property based on which to sort ('domIndex', 'sortData', 'w', 'h')
-        * @param {string} sortOrder - 'asc'/'desc'
-        * @return {function} comparer which takes arguments
-        * @private
-        */
+         * Comparator factory used to produce camparers for sorting.
+         * @see Filterizr.prototype.sort.
+         * @param {string} prop - property based on which to sort ('domIndex', 'sortData', 'w', 'h')
+         * @param {string} sortOrder - 'asc'/'desc'
+         * @return {function} comparer which takes arguments
+         * @private
+         */
         _comparator: function(prop, sortOrder) {
             return function(a, b) {
                 if (sortOrder === 'asc') {
                     if (a[prop] < b[prop])
-                    return -1;
+                        return -1;
                     else if (a[prop] > b[prop])
-                    return 1;
+                        return 1;
                     else
-                    return 0;
-                }
-                else if (sortOrder === 'desc') {
+                        return 0;
+                } else if (sortOrder === 'desc') {
                     if (b[prop] < a[prop])
-                    return -1;
+                        return -1;
                     else if (b[prop] > a[prop])
-                    return 1;
+                        return 1;
                     else
-                    return 0;
+                        return 0;
                 }
             };
         },
 
         /**
-        * Modified version of Jeffery To's array intersection method
-        * @see {@link http://www.falsepositives.com/index.php/2009/12/01/javascript-function-to-get-the-intersect-of-2-arrays/}
-        * @return {Object[]} a disjoint array containing the elements of the first array not found in the second
-        * @private
-        */
+         * Modified version of Jeffery To's array intersection method
+         * @see {@link http://www.falsepositives.com/index.php/2009/12/01/javascript-function-to-get-the-intersect-of-2-arrays/}
+         * @return {Object[]} a disjoint array containing the elements of the first array not found in the second
+         * @private
+         */
         _getArrayOfUniqueItems: function(arr1, arr2) {
-            var r = [], o = {}, l = arr2.length, i, v;
+            var r = [],
+                o = {},
+                l = arr2.length,
+                i, v;
             for (i = 0; i < l; i++) {
                 o[arr2[i].domIndex] = true;
             }
@@ -824,32 +830,34 @@
         },
 
         /**
-        * Brahn's take on CMS's solution to calling the window.resize event at set
-        * intervals in multiple places in the code using a Java-like UUID with a regexp
-        * @see {@link http://stackoverflow.com/questions/2854407/javascript-jquery-window-resize-how-to-fire-after-the-resize-is-completed}
-        * @return {function} which calls the callback or just clears the timer
-        * @private
-        */
-        _delayEvent: (function () {
-            var self = this, timers = {};
-            return function (callback, ms, uniqueId) {
+         * Brahn's take on CMS's solution to calling the window.resize event at set
+         * intervals in multiple places in the code using a Java-like UUID with a regexp
+         * @see {@link http://stackoverflow.com/questions/2854407/javascript-jquery-window-resize-how-to-fire-after-the-resize-is-completed}
+         * @return {function} which calls the callback or just clears the timer
+         * @private
+         */
+        _delayEvent: (function() {
+            var self = this,
+                timers = {};
+            return function(callback, ms, uniqueId) {
                 if (uniqueId === null) {
                     throw Error("UniqueID needed");
                 }
                 if (timers[uniqueId]) {
-                    clearTimeout (timers[uniqueId]);
+                    clearTimeout(timers[uniqueId]);
                 }
                 timers[uniqueId] = setTimeout(callback, ms);
             };
         })(),
 
         /**
-        * Fisher-Yates array shuffling algorithm implemented for JavaScript.
-        * @return {Object[]} shuffled array.
-        * @private
-        */
+         * Fisher-Yates array shuffling algorithm implemented for JavaScript.
+         * @return {Object[]} shuffled array.
+         * @private
+         */
         _fisherYatesShuffle: function shuffle(array) {
-            var m = array.length, t, i;
+            var m = array.length,
+                t, i;
             // While there remain elements to shuffle…
             while (m) {
                 // Pick a remaining element…
@@ -864,23 +872,24 @@
     };
 
     /**
-    * FiltrItem Prototype
-    */
+     * FiltrItem Prototype
+     */
     var FiltrItemProto = {
 
         /**
-        * Transforms a jQuery item with .filtr-item class into a FiltrItem.
-        * @param {number} index - initial item order based on position in DOM.
-        * @param {Filterizr} parent - reference to Filterizr container containing this Filtr Item.
-        * @return {jQuery} this - to facilitate method chaining.
-        * @constructor
-        */
+         * Transforms a jQuery item with .filtr-item class into a FiltrItem.
+         * @param {number} index - initial item order based on position in DOM.
+         * @param {Filterizr} parent - reference to Filterizr container containing this Filtr Item.
+         * @return {jQuery} this - to facilitate method chaining.
+         * @constructor
+         */
         _init: function(index, parent) {
-            var self = this, delay = 0;
+            var self = this,
+                delay = 0;
             //Private item properties
-            self._parent   = parent;			  //Ref to parent Filterizr object
+            self._parent = parent; //Ref to parent Filterizr object
             self._category = self._getCategory(); //data-category values
-            self._lastPos  = {};				  //Used for animations
+            self._lastPos = {}; //Used for animations
             //Public properties - used for sorting
             self.domIndex = index;
             self.sortData = self.data('sort');
@@ -889,29 +898,29 @@
             self.h = 0;
             //self states
             self._isFilteredOut = true;
-            self._filteringOut  = false;
-            self._filteringIn   = false;
+            self._filteringOut = false;
+            self._filteringIn = false;
             //Determine delay & set initial item styles
             self.css(parent.options.filterOutCss)
-            .css({
-                '-webkit-backface-visibility': 'hidden',
-                'perspective': '1000px',
-                '-webkit-perspective': '1000px',
-                '-webkit-transform-style': 'preserve-3d',
-                'position': 'absolute',
-                'transition': 'all ' + parent.options.animationDuration + 's ' + parent.options.easing + ' ' + self._calcDelay() + 'ms'
-            });
+                .css({
+                    '-webkit-backface-visibility': 'hidden',
+                    'perspective': '1000px',
+                    '-webkit-perspective': '1000px',
+                    '-webkit-transform-style': 'preserve-3d',
+                    'position': 'absolute',
+                    'transition': 'all ' + parent.options.animationDuration + 's ' + parent.options.easing + ' ' + self._calcDelay() + 'ms'
+                });
             //Events
-            self.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+            self.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function() {
                 self._onTransitionEnd();
             });
             return self;
         },
 
         /**
-        * Updates the dimensions (width/height) of the item.
-        * @private
-        */
+         * Updates the dimensions (width/height) of the item.
+         * @private
+         */
         _updateDimensions: function() {
             var self = this;
             self.w = self.outerWidth();
@@ -919,28 +928,29 @@
         },
 
         /**
-        * Calculates and returns the value of delay to apply to transition-delay in ms, depending on delayMode
-        * @return {number} value to apply to transition-delay in ms.
-        * @private
-        */
+         * Calculates and returns the value of delay to apply to transition-delay in ms, depending on delayMode
+         * @return {number} value to apply to transition-delay in ms.
+         * @private
+         */
         _calcDelay: function() {
-            var self = this, r = 0;
+            var self = this,
+                r = 0;
             if (self._parent.options.delayMode === 'progressive')
-            r = self._parent.options.delay * self.domIndex;
+                r = self._parent.options.delay * self.domIndex;
             else
             if (self.domIndex % 2 === 0) r = self._parent.options.delay;
             return r;
         },
 
         /**
-        * Determines which categories this items belongs to and updates the _lastCategory prop of Filterizr.
-        * @throws {InvalidArgumentException} data-category of .filtr-item elements must be integer or string of integers delimited by ', '
-        * @return {Object[]|number} the categories this item belongs to.
-        * @private
-        */
+         * Determines which categories this items belongs to and updates the _lastCategory prop of Filterizr.
+         * @throws {InvalidArgumentException} data-category of .filtr-item elements must be integer or string of integers delimited by ', '
+         * @return {Object[]|number} the categories this item belongs to.
+         * @private
+         */
         _getCategory: function() {
             var self = this,
-                ret  = self.data('category');
+                ret = self.data('category');
             //If more than one category provided
             if (typeof ret === 'string') {
                 ret = ret.split(', ');
@@ -953,8 +963,7 @@
                         self._parent._lastCategory = parseInt(ret[i]);
                     }
                 }
-            }
-            else {
+            } else {
                 if (ret > self._parent._lastCategory)
                     self._parent._lastCategory = ret;
             }
@@ -962,21 +971,21 @@
         },
 
         /**
-        * Handles the transitionEnd event.
-        * @private
-        */
+         * Handles the transitionEnd event.
+         * @private
+         */
         _onTransitionEnd: function() {
             var self = this;
             //finished filtering out
             if (self._filteringOut) {
                 $(self).addClass('filteredOut');
                 self._isFilteredOut = true;
-                self._filteringOut  = false;
+                self._filteringOut = false;
             }
             //finished filtering in
             else if (self._filteringIn) {
                 self._isFilteredOut = false;
-                self._filteringIn 	= false;
+                self._filteringIn = false;
             }
             //if animating trigger filteringEnd event once on parent
             if (self._parent._isAnimating) {
@@ -991,11 +1000,11 @@
         },
 
         /**
-        * Filters out the item.
-        * @private
-        */
+         * Filters out the item.
+         * @private
+         */
         _filterOut: function() {
-            var self         = this,
+            var self = this,
                 filterOutCss = self._parent._makeDeepCopy(self._parent.options.filterOutCss);
             //Auto add translate to transform over user-defined filterOut styles
             filterOutCss.transform += ' translate3d(' + self._lastPos.left + 'px,' + self._lastPos.top + 'px, 0)';
@@ -1008,18 +1017,18 @@
         },
 
         /**
-        * Filters in the item.
-        * @param {Object} targetPos - is the position to move to with transform-translate
-        * @private
-        */
+         * Filters in the item.
+         * @param {Object} targetPos - is the position to move to with transform-translate
+         * @private
+         */
         _filterIn: function(targetPos) {
-            var self        = this,
+            var self = this,
                 filterInCss = self._parent._makeDeepCopy(self._parent.options.filterInCss);
             //Remove the filteredOut class
             $(self).removeClass('filteredOut');
             //Tag as filtering in for transitionend event
             self._filteringIn = true;
-            self._lastPos     = targetPos;
+            self._lastPos = targetPos;
             //Make clickable
             self.css('pointer-events', 'auto');
             //Auto add translate to transform over user-defined filterIn styles

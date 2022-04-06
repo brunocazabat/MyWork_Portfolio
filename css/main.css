@@ -4,6 +4,8 @@ Author         : HasnaaDesign
 Version        : 1.0
 Primary Use    : Personal, Porfolio
 -----------------------------------------------------------------*/
+
+
 /*-----------------------------------------------------------------
 Table Of Contents
 --------------------------------
@@ -25,6 +27,7 @@ Table Of Contents
  16. Media Queries
 -----------------------------------------------------------------*/
 
+
 /* --------------------------------------
    1. Global Styles
 -----------------------------------------*/
@@ -42,7 +45,12 @@ body {
     background-color: #323232;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
@@ -56,7 +64,9 @@ a:active {
     text-decoration: none;
 }
 
+
 /*=========== Typography ============*/
+
 h1 {
     font-size: 80px;
     font-weight: 800;
@@ -87,14 +97,16 @@ h6 {
     font-weight: 400;
 }
 
+
 /*=========== My Classes ============*/
+
 .main-title {
     margin-bottom: 60px;
     position: relative;
     display: inline-block;
 }
 
-.main-title h2 {    
+.main-title h2 {
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -195,6 +207,7 @@ h6 {
     transform-style: initial !important;
 }
 
+
 /* --------------------------------------
    2. Loading
 -----------------------------------------*/
@@ -250,7 +263,6 @@ h6 {
         transform: scale(0, 0);
         opacity: 0.6;
     }
-
     100% {
         transform: scale(1, 1);
         opacity: 0;
@@ -262,12 +274,12 @@ h6 {
         -webkit-transform: scale(0, 0);
         opacity: 0.6;
     }
-
     100% {
         -webkit-transform: scale(1, 1);
         opacity: 0;
     }
 }
+
 
 /* --------------------------------------
    3. Navbar
@@ -360,9 +372,9 @@ h6 {
     color: #16c0f0;
 }
 
-.navbar .navbar-nav > li > a,
-.navbar .navbar-nav > li > a:hover,
-.navbar .navbar-nav > li > a:focus {
+.navbar .navbar-nav>li>a,
+.navbar .navbar-nav>li>a:hover,
+.navbar .navbar-nav>li>a:focus {
     color: #fff;
     font-weight: 600;
     padding: 10px 12px;
@@ -371,12 +383,14 @@ h6 {
     font-family: 'Montserrat', sans-serif;
 }
 
-.navbar .navbar-nav > li > a.active {
+.navbar .navbar-nav>li>a.active {
     color: #16c0f0;
     font-weight: 600;
 }
 
+
 /*=========== Vertical Navigation ============*/
+
 .vertical-nav .toggle-menu {
     position: fixed;
     top: 15px;
@@ -525,7 +539,6 @@ h6 {
         transform: translate(-30px, -75%);
         opacity: 0;
     }
-    
     100% {
         -webkit-transform: translate(0, -50%);
         -moz-transform: translate(0, -50%);
@@ -545,7 +558,6 @@ h6 {
         transform: translate(-30px, -75%);
         opacity: 0;
     }
-    
     100% {
         -webkit-transform: translate(0, -50%);
         -moz-transform: translate(0, -50%);
@@ -555,6 +567,7 @@ h6 {
         opacity: 1;
     }
 }
+
 
 /* --------------------------------------
    4. Home
@@ -643,26 +656,27 @@ h6 {
     animation: arrowmoving .9s linear infinite;
 }
 
-@keyframes arrowmoving{
-    0%{
+@keyframes arrowmoving {
+    0% {
         -webkit-transform: translateX(0px);
         -ms-transform: translateX(0px);
         -o-transform: translateX(0px);
         transform: translateX(0px);
     }
-    50%{
+    50% {
         -webkit-transform: translateX(-8px);
         -ms-transform: translateX(-8px);
         -o-transform: translateX(-8px);
         transform: translateX(-8px);
     }
-    100%{
+    100% {
         -webkit-transform: translateX(0px);
         -ms-transform: translateX(0px);
         -o-transform: translateX(0px);
         transform: translateX(0px);
     }
 }
+
 
 /* --------------------------------------
    5. About Me
@@ -811,6 +825,7 @@ h6 {
     min-width: 175px;
 }
 
+
 /* --------------------------------------
    6. Services
 -----------------------------------------*/
@@ -901,6 +916,7 @@ h6 {
     border-bottom: 6px solid transparent;
     border-top: 8px solid #23849e;
 }
+
 
 /* --------------------------------------
    7. Resume
@@ -997,6 +1013,7 @@ h6 {
     color: #c2c0c3;
 }
 
+
 /* --------------------------------------
    8. Skills
 -----------------------------------------*/
@@ -1036,10 +1053,10 @@ h6 {
     width: 49.5%;
     display: inline-block;
     margin-bottom: 15px;
-    -webkit-box-shadow: 0px 8px 12px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0px 8px 12px rgba(0,0,0,0.1);
-    -o-box-shadow: 0px 8px 12px rgba(0,0,0,0.1);
-    box-shadow: 0px 8px 12px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
 }
 
 .skills .skills-list h3 a {
@@ -1169,7 +1186,7 @@ h6 {
     color: #c2c0c3;
     background: #363638;
     border: 1px solid #33b9de;
-    text-align: center; 
+    text-align: center;
 }
 
 .skills .progress-container .progress h4 .percent {
@@ -1184,8 +1201,9 @@ h6 {
     background: #33b9de;
     color: #2e2e2f;
     border: 1px solid;
-    text-align: center; 
+    text-align: center;
 }
+
 
 /* --------------------------------------
    9. Portfolio
@@ -1243,7 +1261,7 @@ h6 {
     transform: perspective(700px) rotateY(0deg);
 }
 
-.portfolio .portfolio-content .item .overlay { 
+.portfolio .portfolio-content .item .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -1310,6 +1328,7 @@ h6 {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+
 
 /* --------------------------------------
    10. Fun Facts
@@ -1394,6 +1413,7 @@ h6 {
     border-radius: 50%;
 }
 
+
 /* --------------------------------------
    11. Testimonials
 -----------------------------------------*/
@@ -1408,59 +1428,55 @@ h6 {
     background: #292929;
 }
 
-.testimonials .owl-theme .owl-nav.disabled + .owl-dots {
+.testimonials .owl-theme .owl-nav.disabled+.owl-dots {
     margin-top: 20px;
-	line-height: .7;
+    line-height: .7;
 }
 
 .testimonials .owl-theme .owl-dots .owl-dot {
-	 outline: none;
+    outline: none;
 }
 
 .testimonials .owl-theme .owl-dots .owl-dot span {
-	background: #323232;
-	width: 8px;
-	height: 8px;
-	margin: 0 7px;
+    background: #323232;
+    width: 8px;
+    height: 8px;
+    margin: 0 7px;
 }
 
 .testimonials .owl-theme .owl-dots .owl-dot.active span,
 .testimonials .owl-theme .owl-dots .owl-dot:hover span {
-	background: #16c0f0;
+    background: #16c0f0;
 }
 
 .testimonials .owl-theme .owl-dots .owl-dot.active span {
     display: inline-block;
     -webkit-transition: all .2s cubic-bezier(.47, 0, .745, .715);
-            transition: all .2s cubic-bezier(.47, 0, .745, .715);
+    transition: all .2s cubic-bezier(.47, 0, .745, .715);
     -webkit-animation: pulse .7s infinite cubic-bezier(.66, 0, 0, 1);
-            animation: pulse .7s infinite cubic-bezier(.66, 0, 0, 1);
+    animation: pulse .7s infinite cubic-bezier(.66, 0, 0, 1);
     -webkit-box-shadow: 0 0 0 0 rgba(22, 192, 240, .6);
-            box-shadow: 0 0 0 0 rgba(22, 192, 240, .6);
+    box-shadow: 0 0 0 0 rgba(22, 192, 240, .6);
 }
 
-@-webkit-keyframes pulse
-{
-    to
-    {
+@-webkit-keyframes pulse {
+    to {
         -webkit-box-shadow: 0 0 0 7px rgba(22, 192, 240, 0);
-                box-shadow: 0 0 0 7px rgba(22, 192, 240, 0);
+        box-shadow: 0 0 0 7px rgba(22, 192, 240, 0);
     }
 }
 
-@keyframes pulse
-{
-    to
-    {
+@keyframes pulse {
+    to {
         -webkit-box-shadow: 0 0 0 7px rgba(22, 192, 240, 0);
-                box-shadow: 0 0 0 7px rgba(22, 192, 240, 0);
+        box-shadow: 0 0 0 7px rgba(22, 192, 240, 0);
     }
 }
 
 .testimonials .testimonial-box {
-	position: relative;
-	padding: 50px 40px;
-	background: #323232;
+    position: relative;
+    padding: 50px 40px;
+    background: #323232;
     border-left: 12px solid #292929;
     border-right: 12px solid #292929;
     text-align: center;
@@ -1545,23 +1561,23 @@ h6 {
 }
 
 .testimonials .testimonial-box .client-pic img {
-	width: 95px;
-	height: 95px;
-	border-radius: 50%;
-	display: inline-block;
-	border: 2px solid #3a3838;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #3a3838;
     padding: 3px;
     background: #323232;
 }
 
 .testimonials .client-details {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 .testimonials .client-details h6 {
-	color: #fff;
+    color: #fff;
     font-size: 16px;
-	letter-spacing: 1px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 600;
     line-height: 1.8;
@@ -1574,6 +1590,7 @@ h6 {
     color: #16c0f0;
     letter-spacing: .7px;
 }
+
 
 /* --------------------------------------
    12. Blog
@@ -1608,14 +1625,14 @@ h6 {
     clear: both;
 }
 
-.blog  .post .post-img  {
+.blog .post .post-img {
     float: left;
     width: 40%;
     height: 100%;
     overflow: hidden;
 }
 
-.blog  .post .post-img img  {
+.blog .post .post-img img {
     opacity: .6;
     width: 100%;
     height: 100%;
@@ -1726,6 +1743,7 @@ h6 {
     border-top: 6px solid #23849e;
 }
 
+
 /* --------------------------------------
    13. Contact
 -----------------------------------------*/
@@ -1813,7 +1831,7 @@ h6 {
 }
 
 .contact .contact-form {
-	position: relative;
+    position: relative;
     border: 3px solid #383636;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     padding: 40px 30px;
@@ -1853,16 +1871,16 @@ h6 {
     color: #c2c0c3;
 }
 
-.contact .contact-form .form-group .form-control:focus ~ label,
-.contact .contact-form .form-group input:not([value=""]) ~ label,
-.contact .contact-form .form-group textarea:not([data-value=""]) ~ label {
+.contact .contact-form .form-group .form-control:focus~label,
+.contact .contact-form .form-group input:not([value=""])~label,
+.contact .contact-form .form-group textarea:not([data-value=""])~label {
     top: -16px;
     left: 0;
     font-size: 13px;
     letter-spacing: .5px;
 }
 
-.contact .contact-form .form-group .form-control:focus ~ label {
+.contact .contact-form .form-group .form-control:focus~label {
     color: #16c0f0;
 }
 
@@ -1881,7 +1899,7 @@ h6 {
     transform: scale(0);
 }
 
-.contact .contact-form .form-group .form-control:focus ~ .input-border {
+.contact .contact-form .form-group .form-control:focus~.input-border {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -o-transform: scale(1);
@@ -1912,12 +1930,13 @@ h6 {
 }
 
 .contact .contact-form .form-message.success {
-	background-color: #37983b;
+    background-color: #37983b;
 }
 
 .contact .contact-form .form-message.error {
-	background-color: #f54033;
+    background-color: #f54033;
 }
+
 
 /* --------------------------------------
    14. Footer
@@ -1978,12 +1997,14 @@ h6 {
     color: #16c0f0;
 }
 
+
 /* --------------------------------------
    15. Scroll To Top
 -----------------------------------------*/
 
 .scroll-top {
-    background: linear-gradient(135deg, #319be6 0%, #16c0f0 100%);;
+    background: linear-gradient(135deg, #319be6 0%, #16c0f0 100%);
+    ;
     position: fixed;
     font-size: 20px;
     bottom: -50px;
@@ -2002,39 +2023,39 @@ h6 {
     right: 30px;
 }
 
+
 /* --------------------------------------
    16. Media Queries
 -----------------------------------------*/
 
+
 /* Extra Large Devices */
+
 @media (min-width: 1200px) {}
 
+
 /* Large devices (desktops, less than 1200px) */
+
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    
     /*=========== Navbar ============*/
-    .navbar > .container .navbar-brand {
+    .navbar>.container .navbar-brand {
         margin-left: 0;
     }
-    
     /*=========== Home ============*/
     .home .intro {
         margin-left: 3vw;
     }
-    
     /*=========== Services ============*/
     .services .service h4 {
         font-size: 15px;
         letter-spacing: .7px;
     }
-    
     /*=========== Fun Facts ============*/
     .facts .fact-item h4 {
         display: block;
         padding: 16px 20px 16px 40px;
         letter-spacing: 0;
     }
-    
     .facts .fact-item h4 span {
         width: 45px;
         height: 45px;
@@ -2042,64 +2063,54 @@ h6 {
     }
 }
 
+
 /* Medium devices (tablets, less than 992px) */
+
 @media (min-width: 768px) and (max-width: 991.98px) {
-    
     .main-title h2 {
         font-size: 26px;
     }
-    
     .main-title span {
         font-size: 18px;
     }
-    
     /*=========== Navbar ============*/
-    .navbar > .container .navbar-brand {
+    .navbar>.container .navbar-brand {
         margin-left: 0;
     }
-    
-    .navbar .navbar-nav > li > a,
-    .navbar .navbar-nav > li > a:hover,
-    .navbar .navbar-nav > li > a:focus {
+    .navbar .navbar-nav>li>a,
+    .navbar .navbar-nav>li>a:hover,
+    .navbar .navbar-nav>li>a:focus {
         padding: 10px;
     }
-    
     /*=========== Home ============*/
     .home .intro h1 {
         font-size: 75px;
     }
-    
     /*=========== About Me ============*/
     .about-me .about-image {
         margin-right: 110px;
         margin-left: 110px;
         margin-bottom: 40px;
     }
-    
     /*=========== Services ============*/
     .services {
         padding-bottom: 70px;
     }
-    
     .services .service {
         margin-bottom: 30px;
     }
-    
     /*=========== Resume ============*/
     .resume .education {
         margin-bottom: 30px;
     }
-    
     /*=========== Skills ============*/
     .skills .skills-left {
         margin-bottom: 30px;
     }
-    
     /*=========== Fun Facts ============*/
     .facts .fact-item h4 {
         padding: 17px 30px 17px 65px;
     }
-    
     /*=========== Blog ============*/
     .blog .post .post-content .post-text p {
         padding-top: 11px;
@@ -2108,35 +2119,30 @@ h6 {
     }
 }
 
+
 /* Small Devices */
+
 @media (max-width: 767.98px) {
-    
     .main-title h2 {
         font-size: 26px;
     }
-    
     .main-title span {
         font-size: 18px;
     }
-    
     .container {
         max-width: 540px;
     }
-    
     /*=========== Navbar ============*/
     .navbar {
         background-color: #323232;
         border-bottom: 1px solid rgba(255, 255, 255, .1);
     }
-    
     .navbar .navbar-header {
         margin: 0;
     }
-    
     .navbar .menu-toggle {
         display: block;
     }
-    
     .navbar .navbar-links {
         position: fixed;
         top: 0;
@@ -2146,7 +2152,6 @@ h6 {
         visibility: hidden;
         background: rgba(0, 0, 0, .4);
     }
-    
     .navbar .navbar-links .navbar-nav {
         background: #323232;
         position: absolute;
@@ -2157,14 +2162,12 @@ h6 {
         margin: 0;
         overflow: auto;
     }
-    
-    .navbar .navbar-links .navbar-nav > li.nav-brand {
+    .navbar .navbar-links .navbar-nav>li.nav-brand {
         padding: 60px 0;
         border-bottom: 1px solid #323233;
         box-shadow: 0 6px 10px rgba(0, 0, 0, .1);
     }
-    
-    .navbar .navbar-links .navbar-nav > li.nav-brand a {
+    .navbar .navbar-links .navbar-nav>li.nav-brand a {
         display: inline-block;
         position: relative;
         padding: 0;
@@ -2175,28 +2178,24 @@ h6 {
         letter-spacing: 1px;
         font-family: 'Montserrat', sans-serif;
     }
-    
-    .navbar .navbar-links .navbar-nav > li.nav-brand a span {
+    .navbar .navbar-links .navbar-nav>li.nav-brand a span {
         color: #16c0f0;
     }
-    
-    .navbar .navbar-nav > li {
+    .navbar .navbar-nav>li {
         border-top: 1px solid #3a3939;
         border-bottom: 1px solid #292929;
         padding: 15px 28px;
     }
-
-    .navbar .navbar-nav > li > a,
-    .navbar .navbar-nav > li > a:hover,
-    .navbar .navbar-nav > li > a:focus {
+    .navbar .navbar-nav>li>a,
+    .navbar .navbar-nav>li>a:hover,
+    .navbar .navbar-nav>li>a:focus {
         position: relative;
         display: inline-block;
         padding: 0;
         margin: 0;
         letter-spacing: 2px;
     }
-    
-    .navbar .navbar-nav > li > a:before {
+    .navbar .navbar-nav>li>a:before {
         content: attr(data-name);
         position: absolute;
         left: 0;
@@ -2210,236 +2209,190 @@ h6 {
         -o-transition: all .5s ease-in-out;
         transition: all .5s ease-in-out;
     }
-    
-    .navbar .navbar-nav > li:not(.nav-brand) > a:hover:before {
+    .navbar .navbar-nav>li:not(.nav-brand)>a:hover:before {
         width: 100%;
     }
-    
     .navbar.menu-active .navbar-links {
         visibility: visible;
     }
-    
     .navbar.menu-active .navbar-links .navbar-nav {
         left: 0;
     }
-    
     /*=========== Home ============*/
     .home .intro h1 {
         font-size: 50px;
     }
-    
     /*=========== About Me ============*/
     .about-me {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    
     .about-me .about-image {
         margin-right: 80px;
         margin-left: 80px;
         margin-bottom: 40px;
     }
-    
     .about-me .about-info h3 {
         font-size: 18px;
     }
-    
     /*=========== Services ============*/
     .services {
         padding-top: 80px;
         padding-bottom: 50px;
     }
-    
     .services .service {
         margin-bottom: 30px;
     }
-    
     /*=========== Resume ============*/
     .resume {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    
     .resume .education {
         margin-bottom: 30px;
     }
-    
     /*=========== Skills ============*/
     .skills {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    
     .skills .skills-left {
         margin-bottom: 30px;
     }
-    
     /*=========== Portfolio ============*/
     .portfolio {
         padding-top: 80px;
         padding-bottom: 50px;
     }
-    
     /*=========== Fun Facts ============*/
     .facts {
         padding-top: 80px;
         padding-bottom: 50px;
     }
-    
     .facts .fact-item {
         margin: 0 50px 30px;
     }
-    
     /*=========== Testimonials ============*/
     .testimonials {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    
     /*=========== Blog ============*/
     .blog {
         padding-top: 80px;
         padding-bottom: 60px;
     }
-    
     .blog .post {
         margin-bottom: 20px;
         height: auto;
     }
-    
     .blog .post .post-img {
         float: none;
         width: 100%;
         height: auto;
     }
-    
     .blog .post .post-content {
         float: none;
         width: 100%;
         padding: 30px 20px 80px;
         height: auto;
     }
-    
     .blog .post .post-content .post-text p {
         margin: 15px 0;
     }
-    
     /*=========== Contact ============*/
     .contact {
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    
     .contact .contact-boxes {
         padding: 40px 90px;
         margin-bottom: 30px;
     }
 }
 
+
 /* Extra small devices (portrait phones, less than 576px) */
+
 @media (max-width: 575.98px) {
-    
     .main-title {
         margin-bottom: 50px;
     }
-    
     .main-title h2 {
         font-size: 20px;
     }
-    
     .main-title span {
         font-size: 16px;
         left: 60%;
     }
-    
     /*=========== Home ============*/
     .home .intro h3 {
         font-size: 20px;
         letter-spacing: .3px;
     }
-    
     .home .intro h1 {
         font-size: 42px;
     }
-    
     .home .intro p {
         font-size: 20px;
         letter-spacing: .3px;
     }
-    
     .home .arrow {
         right: 5px;
     }
-    
     /*=========== About Me ============*/
     .about-me .about-image {
         margin: 0;
         margin-bottom: 40px;
     }
-    
     .about-me .about-info .main-title {
         margin-bottom: 30px;
     }
-    
     .about-me .about-info h3 {
         font-size: 17px;
         margin-bottom: 20px;
     }
-    
     .about-me .about-info p {
         font-size: 13px;
         margin-bottom: 20px;
     }
-    
     .about-me .about-info .personal-info {
         margin-bottom: 20px;
     }
-    
     .about-me .about-info .personal-info p {
         font-size: 13px;
     }
-    
     /*=========== Services ============*/
     .services .service h4 {
         font-size: 14px;
     }
-    
     .services .service p {
         font-size: 13px;
     }
-    
     /*=========== Resume ============*/
     .resume .resume-item span {
         font-size: 13px;
     }
-    
     .resume .resume-item h4 {
         font-size: 15px;
     }
-    
     .resume .resume-item p {
         font-size: 13px;
     }
-    
     /*=========== Skills ============*/
-    
     .skills .skills-left h4 {
         font-size: 18px;
     }
-    
     .skills .skills-left p {
         font-size: 13px;
     }
-    
     .skills .skills-list {
         display: none;
     }
-    
     .skills .skills-content {
         background: none;
         padding: 0;
     }
-    
     .skills .skills-content .professional-skills,
     .skills .skills-content .personal-skills {
         display: block;
@@ -2448,58 +2401,46 @@ h6 {
         position: relative;
         background: #323232;
     }
-    
     .skills .skills-content h3 {
         display: block;
     }
-    
     .skills .progress-container .progress h4 {
         padding: 0 56px 0 15px;
         font-size: 12px;
         letter-spacing: .3px;
     }
-    
     .skills .progress-container .progress h4 .percent {
         padding: 0 8px;
     }
-    
     /*=========== Fun Facts ============*/
     .facts .fact-item {
         margin: 0;
         margin-bottom: 30px;
     }
-    
     /*=========== Testimonials ============*/
     .testimonials .testimonial-box .description p {
         font-size: 13px;
         letter-spacing: .3px;
     }
-    
     .testimonials .testimonial-box .client-pic {
         margin-top: 30px;
     }
-    
     /*=========== Blog ============*/
     .blog .post .post-content .post-title h4 {
         font-size: 15px;
     }
-    
     .blog .post .post-content .post-text p {
         font-size: 13px;
         letter-spacing: .3px;
     }
-    
     .blog .post-content .post-footer .post-more {
         font-size: 12px;
     }
-    
     .blog .post-content .post-footer .post-category a {
         font-size: 14px;
     }
-    
     /*=========== Contact ============*/
     .contact .contact-boxes {
         padding: 40px 20px;
     }
-    
 }
