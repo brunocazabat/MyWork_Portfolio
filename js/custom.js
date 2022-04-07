@@ -133,17 +133,6 @@ $(function() {
         animationDuration: 0.4
     });
 
-    /*========== Start Magnigic Popup Js ==========*/
-    if ($('.portfolio-content .item')[0]) {
-
-        $('.portfolio-content .item').magnificPopup({
-            delegate: '.icon-img',
-            type: 'image',
-            gallery: {
-                enabled: true
-            }
-        });
-    }
 
     /*========== Facts Counter  ==========*/
     if (!factsCheck && $(this).scrollTop() >= $(".facts").offset().top - 400) {
