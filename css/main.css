@@ -544,7 +544,7 @@ h6 {
 -----------------------------------------*/
 
 .home {
-    background: url('https://via.placeholder.com/1920x1080') center center no-repeat fixed;
+    background: url('../images/banner.jpg') center center no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1306,7 +1306,7 @@ h6 {
 
 .facts {
     position: relative;
-    background: url('https://via.placeholder.com/1920x1280') center center no-repeat fixed;
+    background: url('../images/banner2.jpg') center center no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
