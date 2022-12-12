@@ -4,7 +4,7 @@ $(function() {
 
     "use strict";
 
-    var win = $(window),
+    let win = $(window),
         htmlBody = $("html, body"),
         scrollToTop = $(".scroll-top"),
         navBar = $(".navbar"),
@@ -56,7 +56,7 @@ $(function() {
     /*========== Start Scroll For Link To Go Section  ==========*/
     $(".home .arrow a, .skills .skills-left .main-btn").on("click", function(e) {
         e.preventDefault();
-        var selector = $(this);
+        let selector = $(this);
         htmlBody.animate({
             scrollTop: $(selector.attr("href")).offset().top
         }, 800);
@@ -102,28 +102,6 @@ $(function() {
         $($(this).attr('href')).show();
     });
 
-    /*========== Skills Progress  ==========*/
-    function skillsPogress() {
-        $(".progress-container").each(function() {
-            var progressBar = $(this).find(".progress-bar");
-            progressBar.css("width", progressBar.attr("aria-valuenow") + "%");
-        });
-    }
-
-    if (!progressCheck && $(this).scrollTop() >= $(".skills").offset().top - 300) {
-        skillsPogress();
-        progressCheck = true;
-    }
-
-    win.on("scroll", function() {
-
-        if (!progressCheck && $(this).scrollTop() >= $(".skills").offset().top - 300) {
-            skillsPogress();
-            progressCheck = true;
-        }
-
-    });
-
     /*========== Start Portfolio Trigger Filterizr Js  ==========*/
     $("#control li").on('click', function() {
         $(this).addClass('active').siblings("li").removeClass('active');
@@ -131,20 +109,6 @@ $(function() {
     // The Filterizr
     $('#filtr-container').filterizr({
         animationDuration: 0.4
-    });
-
-
-    /*========== Facts Counter  ==========*/
-    if (!factsCheck && $(this).scrollTop() >= $(".facts").offset().top - 400) {
-        $(".facts .fact-number").countTo();
-        factsCheck = true;
-    }
-
-    win.on("scroll", function() {
-        if (!factsCheck && $(this).scrollTop() >= $(".facts").offset().top - 400) {
-            $(".facts .fact-number").countTo();
-            factsCheck = true;
-        }
     });
 
     /*========== Owl Carousel Js Testimonial  ==========*/
@@ -161,12 +125,12 @@ $(function() {
     /*========== Ajax Contact Form  ==========*/
     $('.contact-form').on("submit", function() {
 
-        var myForm = $(this),
+        let myForm = $(this),
             data = {};
 
         myForm.find('[name]').each(function() {
 
-            var that = $(this),
+            let that = $(this),
                 name = that.attr('name'),
                 value = that.val();
 
